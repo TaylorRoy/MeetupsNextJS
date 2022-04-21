@@ -38,9 +38,9 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context) {
   const meetupID = context.params.meetupID;
-
+  const API_KEY = process.env.API_KEY;
   const client = await MongoClient.connect(
-    "mongodb+srv://TaylorBRoy:iaHU4PxeDH1MrD3R@cluster0.iuir7.mongodb.net/meetups?retryWrites=true&w=majority"
+    "mongodb+srv://TaylorBRoy:API_KEY@cluster0.iuir7.mongodb.net/meetups?retryWrites=true&w=majority"
   );
   const db = client.db();
 
